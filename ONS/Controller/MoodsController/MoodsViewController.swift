@@ -224,37 +224,7 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
             
             DispatchQueue.main.async {
                 CoreDataUtility().receivedMessage(message: message)
-                let applianceId = String(message.suffix(2).dropLast())
-                
-                let index = message.index(message.startIndex, offsetBy: 22)
-                let status = String(message[index])
-                
-                let indexVariable = message.index(message.startIndex, offsetBy: 20)
-                let variable = String(message[indexVariable])
-                
-                
-                if variable == "F"{
-                    
-                }
-                else{
-                    if applianceId == "7"{
-                        
-                    }
-                    else{
-                        
-                        if status == "0" {
-                            
-                        }
-                        else{
-                            
-                        }
-                        
-                        
-                        
-                    }
-                    
-                }
-                
+               
             }
             
         }
