@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Appliances" representedClassName="Appliances" syncable="YES" codeGenerationType="class">
+        <attribute name="applianceDisplayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="applianceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="applianceMoodStatus" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="applianceName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="appliancepreviousState" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="applianceRoutineStatus" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="applianceStatus" optional="YES" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="applianceType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="applianceVariableCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToRoom" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="hasAppliance" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <entity name="Mood" representedClassName="Mood" syncable="YES" codeGenerationType="class">
+        <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAdded" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="moodId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moodName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasAppliances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appliances" syncable="YES"/>
+    </entity>
+    <entity name="Room" representedClassName="Room" syncable="YES" codeGenerationType="class">
+        <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAdded" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="r_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roomID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roomName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToRoutine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Routine" syncable="YES"/>
+        <relationship name="hasAppliance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appliances" inverseName="belongsToRoom" inverseEntity="Appliances" syncable="YES"/>
+    </entity>
+    <entity name="Routine" representedClassName="Routine" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isAdded" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="routine_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routine_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routine_switchstatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routineImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="hasAppliances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appliances" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="loginpassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Appliances" positionX="-387" positionY="162" width="128" height="210"/>
+        <element name="Mood" positionX="-144" positionY="9" width="128" height="120"/>
+        <element name="Room" positionX="52" positionY="327" width="128" height="150"/>
+        <element name="Routine" positionX="-126" positionY="243" width="128" height="165"/>
+        <element name="User" positionX="-342" positionY="-36" width="128" height="90"/>
+    </elements>
+</model>
