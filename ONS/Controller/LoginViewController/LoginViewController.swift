@@ -10,10 +10,23 @@ import UIKit
 import CoreData
 import SystemConfiguration.CaptiveNetwork
 
-class LoginViewController: UIViewController ,SocketStreamDelegate{
+class LoginViewController: UIViewController , SocketStreamDelegate{
     func socketDidConnect(stream: Stream) {
-        print("connected")
+        
     }
+    
+    func socketDidReceivePopMessage(stream: Stream, message: String) {
+                                        let alert = UIAlertController(title: "Warning", message: "Not able to make connection, please check again!!", preferredStyle: .alert)
+                                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        
+                                        // show alert
+                                        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+                                        alertWindow.rootViewController = UIViewController()
+                                        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+                                        alertWindow.makeKeyAndVisible()
+                                        alertWindow.rootViewController?.present(alert, animated: true, completion: nil)
+    }
+    @IBOutlet var wifiView: UIView!
     let coredataUtility : CoreDataUtility = CoreDataUtility.init()
     @IBOutlet var txt_user: LeftImageTextField!
     @IBOutlet var txt_pwd: LeftImageTextField!
@@ -26,8 +39,8 @@ class LoginViewController: UIViewController ,SocketStreamDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        wifiView.isHidden = true
         Socket.soketmanager.delegate = self
-       
         // Do any additional setup after loading the view.
         
   
@@ -37,7 +50,7 @@ class LoginViewController: UIViewController ,SocketStreamDelegate{
         super.viewDidAppear(animated)
         self.wifissid = ConnectedWifi().getWiFiSsid()
         
-       
+       wifiView.isHidden = true
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
        
         
@@ -52,7 +65,7 @@ class LoginViewController: UIViewController ,SocketStreamDelegate{
                     Socket.soketmanager.open(host: sharedManager.shared.getlocalIpAddress(), port: 1336)
                 }
                 else{
-                    Socket.soketmanager.open(host: sharedManager.shared.getIpAddress(), port: 1336)
+                    Socket.soketmanager.open(host: UserDefaults.standard.value(forKey: "ipAddress") as? String, port: 1336)
                 }
                 let modalViewController : AppliancesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppliancesViewController") as! AppliancesViewController
                 let navController = UINavigationController(rootViewController: modalViewController) // Creating a navigation controller with VC1 at the root of the navigation stack.
@@ -68,7 +81,7 @@ class LoginViewController: UIViewController ,SocketStreamDelegate{
                     let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alert.addAction(cancel)
                     self.present(alert, animated: true, completion: nil)
-                    
+                    wifiView.isHidden = false
                     
                    
                 }
@@ -78,17 +91,18 @@ class LoginViewController: UIViewController ,SocketStreamDelegate{
             break
         case .wwan:
             if launchedBefore  {
-                Socket.soketmanager.open(host: sharedManager.shared.getIpAddress(), port: 1336)
+                Socket.soketmanager.open(host: UserDefaults.standard.value(forKey: "ipAddress") as? String, port: 1336)
             }
             else{
                 let alert = UIAlertController(title: "Information", message: "Connect to local router", preferredStyle: .alert)
                 let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(cancel)
                 self.present(alert, animated: true, completion: nil)
+                wifiView.isHidden = false
             }
             break
         case .unreachable:
-            
+            wifiView.isHidden = false
             break
         }
     }
@@ -120,17 +134,17 @@ class LoginViewController: UIViewController ,SocketStreamDelegate{
         }
         else{
              guard let status = Network.reachability?.status else { return }
-            
+           let wifissidString = ConnectedWifi().getWiFiSsid()
             switch(status){
             case .wifi:
                 
-                if wifissid == "qiming_wifi"{
+                if wifissidString == "qiming_wifi"{
                    
                     //*SSID:5:Sarga:PASSWORD:5:S@6g@#
+                    UserDefaults.standard.set(ipAddressField.text!, forKey: "ipAddress")
+                    UserDefaults.standard.set(ssidField.text!, forKey: "newssid")
+                    UserDefaults.standard.set(passwordField.text!, forKey: "newPassword")
                     
-                    sharedManager.shared.setIpAddress(newIp: ipAddressField.text!)
-                    sharedManager.shared.setSsid(newSSID: ssidField.text!)
-                    sharedManager.shared.setPassword(newPassword: passwordField.text!)
                     Socket.soketmanager.send(message: "*SSID:\(String(describing: ssidField.text!.count)):\(ssidField.text!):PASSWORD:\(String(describing: passwordField.text!.count)):\(passwordField.text!)#")
                     
                     let modalViewController : AppliancesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppliancesViewController") as! AppliancesViewController

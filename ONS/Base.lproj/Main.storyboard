@@ -1875,7 +1875,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cba-pg-AP0">
-                                        <rect key="frame" x="159" y="102" width="40" height="40"/>
+                                        <rect key="frame" x="159" y="101" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
@@ -2043,6 +2043,7 @@
                                             <outlet property="roomButton" destination="JCt-Hm-Bw6" id="D25-OK-jyw"/>
                                             <outlet property="roomImage" destination="pVv-a8-Kgp" id="1q2-xY-Rz6"/>
                                             <outlet property="roomName" destination="UT9-km-CO8" id="IAf-52-BBj"/>
+                                            <outlet property="settingsIcon" destination="JCt-Hm-Bw6" id="imY-E3-rBl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2566,6 +2567,22 @@
                                             <action selector="settingsOkAction:" destination="88s-hZ-mWA" eventType="touchUpInside" id="j31-mv-Rw3"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39S-Sl-n9I">
+                                        <rect key="frame" x="8" y="8" width="307" height="298"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Check the connectivity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKc-vC-koX">
+                                                <rect key="frame" x="14" y="136" width="279.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sKc-vC-koX" firstAttribute="centerX" secondItem="39S-Sl-n9I" secondAttribute="centerX" id="d6L-eA-ZUH"/>
+                                            <constraint firstItem="sKc-vC-koX" firstAttribute="centerY" secondItem="39S-Sl-n9I" secondAttribute="centerY" id="qQi-tx-pb9"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2575,10 +2592,14 @@
                                     <constraint firstItem="c8P-xQ-ikM" firstAttribute="leading" secondItem="fjm-L9-hEZ" secondAttribute="leading" constant="24" id="3uC-qf-XZG"/>
                                     <constraint firstItem="7du-gp-T9c" firstAttribute="top" secondItem="c8P-xQ-ikM" secondAttribute="bottom" constant="30" id="6Cb-Xn-gf5"/>
                                     <constraint firstAttribute="trailing" secondItem="oyf-8X-IzU" secondAttribute="trailing" constant="24" id="6v1-Vp-Hfj"/>
+                                    <constraint firstItem="39S-Sl-n9I" firstAttribute="top" secondItem="fjm-L9-hEZ" secondAttribute="top" constant="8" id="72w-Jc-cJE"/>
+                                    <constraint firstItem="39S-Sl-n9I" firstAttribute="leading" secondItem="fjm-L9-hEZ" secondAttribute="leading" constant="8" id="8AC-yw-Lca"/>
                                     <constraint firstItem="oyf-8X-IzU" firstAttribute="leading" secondItem="fjm-L9-hEZ" secondAttribute="leading" constant="24" id="8af-Cs-HOj"/>
                                     <constraint firstAttribute="trailing" secondItem="c8P-xQ-ikM" secondAttribute="trailing" constant="24" id="CCd-yj-pQj"/>
                                     <constraint firstAttribute="trailing" secondItem="xEi-wt-5j0" secondAttribute="trailing" constant="24" id="Dmm-bB-0VT"/>
                                     <constraint firstAttribute="height" constant="314" id="JRC-vD-GIa"/>
+                                    <constraint firstAttribute="bottom" secondItem="39S-Sl-n9I" secondAttribute="bottom" constant="8" id="Qt3-uJ-oNx"/>
+                                    <constraint firstAttribute="trailing" secondItem="39S-Sl-n9I" secondAttribute="trailing" constant="8" id="Yop-rR-zoW"/>
                                     <constraint firstItem="7du-gp-T9c" firstAttribute="leading" secondItem="fjm-L9-hEZ" secondAttribute="leading" constant="24" id="l9h-2d-1Hp"/>
                                     <constraint firstAttribute="bottom" secondItem="xEi-wt-5j0" secondAttribute="bottom" constant="17" id="ogp-Bz-pBe"/>
                                 </constraints>
@@ -2604,6 +2625,7 @@
                         <outlet property="ssidField" destination="oyf-8X-IzU" id="n5S-1z-Tkl"/>
                         <outlet property="txt_pwd" destination="ilP-9D-3aA" id="Ox9-H8-gbx"/>
                         <outlet property="txt_user" destination="vHn-nF-g6B" id="xQh-dU-khn"/>
+                        <outlet property="wifiView" destination="39S-Sl-n9I" id="PjQ-dQ-U0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vr5-4Z-ilJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

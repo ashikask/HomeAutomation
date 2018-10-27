@@ -15,6 +15,7 @@ class RoomsViewController: UIViewController , UIPopoverPresentationControllerDel
     let coredataUtility : CoreDataUtility = CoreDataUtility.init()
     var roomsList : [Room] = [Room]()
     var selectedRoom : Room?
+    var selectedIndex : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +53,12 @@ class RoomsViewController: UIViewController , UIPopoverPresentationControllerDel
     
     @IBAction func settingsAction(_ sender: UIButton) {
         self.selectedRoom = self.roomsList[sender.tag]
+        self.selectedIndex = sender.tag
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         popoverView  = storyboard.instantiateViewController(withIdentifier: "AppliancePopOverTableViewController") as? AppliancePopOverTableViewController
         popoverView?.modalPresentationStyle = UIModalPresentationStyle.popover
         popoverView?.delegate = self
-        popoverView?.popOverArray = ["Add Appliances", "Update RoomId"]
+        popoverView?.popOverArray = ["Add Appliances", "Update RoomId", "Delete Room"]
         let popover: UIPopoverPresentationController = popoverView!.popoverPresentationController!
         popover.delegate = self
         popover.permittedArrowDirections = .up
@@ -96,6 +98,29 @@ extension RoomsViewController : AppliancePopOverProtocol{
         case 1:
             
             self.ShowPopOver(isUpdate: true,forIndex : index)
+        case 2:
+            let alert = UIAlertController(title: "Information", message: "Do you want to delete room?", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Yes", style: .default) { (alert) in
+                if let selectedIndex = self.selectedIndex{
+                let selectedRoomDelete : Room = self.roomsList[selectedIndex]
+                 self.coredataUtility.deleteContext(object: selectedRoomDelete)
+                    self.coredataUtility.saveContext()
+                    if  let roomLists =  self.coredataUtility.arrayOf(Room.self){
+                        //  print(roomLists ?? 0)
+                        self.roomsList = roomLists as! [Room]
+                    }
+                    else {
+                         self.roomsList.removeAll()
+                    }
+                    self.roomTableview.reloadData()
+                    
+                }
+                
+            }
+            alert.addAction(ok)
+            let cancel = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
         default:
             break
         }
@@ -173,6 +198,7 @@ extension RoomsViewController : UITableViewDelegate, UITableViewDataSource {
         if let image = roomsList[indexPath.row].imageId {
         cell.roomImage.image = UIImage(named: image)
         }
+        cell.settingsIcon.tag = indexPath.row
         cell.roomButton.tag = indexPath.row
         cell.roomButton.addTarget(self, action: #selector(settingsAction(_:)), for: UIControlEvents.touchUpInside)
         return cell

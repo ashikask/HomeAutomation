@@ -82,7 +82,7 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
         newMood.isAdded = 0
         coreDataUtility.saveContext()
         
-        Socket.soketmanager.send(message: "MOODADD$$$\(HomeAppliancesConstant().moodType(forMood: (moodArray[index] as? String)!))")
+      //  Socket.soketmanager.send(message: "MOODADD$$$\(HomeAppliancesConstant().moodType(forMood: (moodArray[index] as? String)!))")
         moodsList =  coreDataUtility.arrayOf(Mood.self) as! [Mood]
         self.moodsTableView.reloadData()
         

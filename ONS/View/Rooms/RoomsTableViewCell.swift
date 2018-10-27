@@ -10,6 +10,7 @@ import UIKit
 
 class RoomsTableViewCell: UITableViewCell {
 
+    @IBOutlet var settingsIcon: UIButton!
     @IBOutlet weak var roomName: UILabel!
     @IBOutlet weak var roomImage: UIImageView!
     @IBOutlet weak var roomButton: UIButton!

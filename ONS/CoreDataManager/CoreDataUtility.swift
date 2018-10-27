@@ -73,7 +73,7 @@ class  CoreDataUtility {
     }
     func receivedMessage(message : String ){
         //initial update
-        if message.count > 25 && message.contains("@"){
+        if message.count > 25 && message.contains("&"){
             
             if message.count == 27 {
                 let roomId = String(message.prefix(17).dropFirst())

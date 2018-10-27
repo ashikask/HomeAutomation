@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Appliances" representedClassName="Appliances" syncable="YES" codeGenerationType="class">
         <attribute name="applianceDisplayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="applianceId" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,7 +27,7 @@
         <attribute name="roomID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="roomName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongsToRoutine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Routine" syncable="YES"/>
-        <relationship name="hasAppliance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appliances" inverseName="belongsToRoom" inverseEntity="Appliances" syncable="YES"/>
+        <relationship name="hasAppliance" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Appliances" inverseName="belongsToRoom" inverseEntity="Appliances" syncable="YES"/>
     </entity>
     <entity name="Routine" representedClassName="Routine" syncable="YES" codeGenerationType="class">
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>

@@ -13,6 +13,7 @@ import CoreData
     func socketDidConnect(stream:Stream)
     @objc optional func socketDidDisconnet(stream:Stream, message:String)
     @objc optional func socketDidReceiveMessage(stream:Stream, message:String)
+    @objc optional func socketDidReceivePopMessage(stream:Stream, message:String)
     @objc optional func socketDidEndConnection()
 }
 
@@ -172,16 +173,30 @@ public class Socket: NSObject, StreamDelegate {
                 
                 if bytesRead >= 0 {
                     if let output = NSString(bytes: &buffer, length: bytesRead, encoding: String.Encoding.utf8.rawValue){
-                        
-                        if let delegate = self.delegate{
-                            delegate.socketDidReceiveMessage!(stream: stream, message: output as String)
+                        if output != "" || !output.contains("SUCCESS"){
+                            
+                            if output.contains("FAILURE"){
+                                if let delegate = self.delegate {
+                                    if let theMethod = delegate.socketDidReceivePopMessage?(stream: stream, message: output as String) {
+                                        theMethod
+                                       
+                                    }
+                                }
+
+                            }
+                        else if let delegate = self.delegate{
+                                if let theMethod = delegate.socketDidReceiveMessage?(stream: stream, message: output as String) {
+                                    theMethod
+                                    
+                                }
+                            
                         }
                         else{
                             DispatchQueue.main.async {
                                 CoreDataUtility().receivedMessage(message: output as String)
                             }
                         }
-                        
+                        }
                     }
                 } else {
                     // Handle error
@@ -267,4 +282,8 @@ public extension DispatchQueue {
         _onceTracker.append(token)
         block()
     }
+}
+extension SocketStreamDelegate {
+    public func socketDidReceiveMessage(stream:Stream, message:String) {}
+    
 }

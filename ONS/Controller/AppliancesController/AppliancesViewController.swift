@@ -62,7 +62,22 @@ class AppliancesViewController: UIViewController, UIPopoverPresentationControlle
                 appliancesClassList.append(AppliancesClass(name: item.applianceName!, image: item.imageId!))
                 }
             }
-            
+            for item in self.appliancesClassList{
+                
+                
+                if !self.appliancesList.contains(where: { (appliance) -> Bool in
+                    appliance.applianceName == item.applianceName
+                }){
+                    appliancesClassList.removeAll { (applianceObj) -> Bool in
+                        applianceObj.applianceName == item.applianceName
+                    }
+                }
+               
+            }
+        }
+        else{
+          self.appliancesClassList.removeAll()
+          self.appliancesList.removeAll()
         }
         self.appliancesTable.reloadData()
         btDiscoverySharedInstance.disconnect()
@@ -93,7 +108,7 @@ class AppliancesViewController: UIViewController, UIPopoverPresentationControlle
         popoverView = storyboard.instantiateViewController(withIdentifier: "AppliancePopOverTableViewController") as? AppliancePopOverTableViewController
         popoverView?.modalPresentationStyle = UIModalPresentationStyle.popover
         popoverView?.delegate = self
-        popoverView?.popOverArray = ["Rooms", "Moods", "Routines", "Mood Lighting", "Logout"]
+        popoverView?.popOverArray = ["Rooms", "Moods", "Routines", "Mood Lighting", "Communication"]
         let popover: UIPopoverPresentationController = popoverView!.popoverPresentationController!
         popover.delegate = self
         popover.permittedArrowDirections = .up
@@ -137,8 +152,8 @@ extension AppliancesViewController : AppliancePopOverProtocol{
             let viewController : MoodsLightViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MoodsLightViewController") as! MoodsLightViewController
             self.navigationController?.pushViewController(viewController, animated: true)
         case 4:
-          //  Socket.soketmanager.close()
-            self.dismiss(animated: true, completion: nil)
+            self.showSettings()
+        
         default:
             break
         }

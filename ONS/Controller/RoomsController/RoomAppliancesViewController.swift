@@ -123,6 +123,9 @@ class RoomAppliancesViewController: UIViewController , SocketStreamDelegate{
          
             
         }
+        else{
+            self.appliancesList.removeAll()
+        }
         
         self.roomApplianceCollectionView.reloadData()
         
@@ -259,10 +262,28 @@ extension RoomAppliancesViewController : UICollectionViewDelegate, UICollectionV
         }
         return cell
     }
-    
+    /*
+     let alert = UIAlertController(title: "Information", message: "Do you want to delete room?", preferredStyle: .alert)
+     let ok = UIAlertAction(title: "Yes", style: .default) { (alert) in
+     
+     let selectedRoomDelete : Appliances = self.appliancesList[indexPath.row]
+     self.coredataUtility.deleteContext(object: selectedRoomDelete)
+     self.coredataUtility.saveContext()
+     self.getAppliances()
+     
+     
+     
+     }
+     alert.addAction(ok)
+     let cancel = UIAlertAction(title: "No", style: .cancel, handler: nil)
+     alert.addAction(cancel)
+     self.present(alert, animated: true, completion: nil)
+ */
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let status = ( self.appliancesList[indexPath.row].applianceStatus == 0 ) ? "OF" : "ON"
+       
+        
+      let status = ( self.appliancesList[indexPath.row].applianceStatus == 0 ) ? "OF" : "ON"
         if let roomId = self.roomSelected?.roomID{
        print("*\(String(describing: roomId))$$$\(String(describing: self.appliancesList[indexPath.row].applianceType!))\(status)\(indexPath.row + 1)#")
         }
@@ -353,6 +374,7 @@ extension RoomAppliancesViewController : UICollectionViewDelegate, UICollectionV
              isFirstLaunch = true
         }
         }
+ 
     }
     
     func socketDidConnect(stream: Stream) {
