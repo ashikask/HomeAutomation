@@ -283,7 +283,7 @@ public extension DispatchQueue {
         block()
     }
 }
-extension SocketStreamDelegate {
-    public func socketDidReceiveMessage(stream:Stream, message:String) {}
-    
-}
+//extension SocketStreamDelegate {
+//    public func socketDidReceiveMessage(stream:Stream, message:String) {}
+//    
+//}
