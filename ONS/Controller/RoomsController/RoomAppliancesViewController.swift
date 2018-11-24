@@ -10,7 +10,7 @@ import UIKit
 protocol RoomAppliancesProtocol {
     func dissmissView()
 }
-class RoomAppliancesViewController: UIViewController , SocketStreamDelegate{
+class RoomAppliancesViewController: UIViewController , SocketStreamDelegate, UIGestureRecognizerDelegate{
     
     @IBOutlet weak var sliderStep: UISlider!
     @IBOutlet weak var stepperView: UIView!
@@ -107,12 +107,52 @@ class RoomAppliancesViewController: UIViewController , SocketStreamDelegate{
         }
         }
         }
+        
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        self.roomApplianceCollectionView.addGestureRecognizer(lpgr)
         self.view.layoutSubviews()
         
         // Do any additional setup after loading the view.
     }
    
-  
+   @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.ended {
+            return
+        }
+        
+        let point = gestureReconizer.location(in: self.roomApplianceCollectionView)
+        let indexPath = self.roomApplianceCollectionView.indexPathForItem(at: point)
+        
+        if let index = indexPath {
+            _ = self.roomApplianceCollectionView.cellForItem(at: index)
+            // do stuff with your cell, for example print the indexPath
+            print(index.row)
+            
+            
+            let alert = UIAlertController(title: "Information", message: "Do you want to delete appliance?", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Yes", style: .default) { (alert) in
+                
+                let selectedRoomDelete : Appliances = self.appliancesList[index.row]
+                self.coredataUtility.deleteContext(object: selectedRoomDelete)
+                self.coredataUtility.saveContext()
+                self.getAppliances()
+                
+                
+                
+            }
+            alert.addAction(ok)
+            let cancel = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            print("Could not find index path")
+        }
+    }
+    
     func getAppliances(){
         
         if  let applianceList =  self.roomSelected?.hasAppliance?.allObjects {
@@ -135,6 +175,23 @@ class RoomAppliancesViewController: UIViewController , SocketStreamDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+        
+        // add the spinner view controller
+        addChildViewController(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParentViewController: self)
+        
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            // then remove the spinner view controller
+            child.willMove(toParentViewController: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParentViewController()
+        }
+    }
     
     @IBAction func stepperChange(_ sender: UISlider) {
         
@@ -148,9 +205,11 @@ class RoomAppliancesViewController: UIViewController , SocketStreamDelegate{
                     if !isFromMoodRoutineSettings {
                         if self.appliancesList[self.index!].applianceStatus == 1 {
                             Socket.soketmanager.send(message: "*\(String(describing: roomId))$$$\(String(describing: self.appliancesList[self.index!].applianceType!))\(newvalue)\(String(describing: self.appliancesList[self.index!].applianceDisplayName!))#")
+                            createSpinnerView()
                         }
                         else{
                             Socket.soketmanager.send(message: "*\(String(describing: roomId))$$$\(String(describing: self.appliancesList[self.index!].applianceType!))00\(String(describing: self.appliancesList[self.index!].applianceDisplayName!))#")
+                            createSpinnerView()
                         }
                         
                         
@@ -201,6 +260,7 @@ class RoomAppliancesViewController: UIViewController , SocketStreamDelegate{
             if let roomId = self.roomSelected?.roomID{
                 
                 Socket.soketmanager.send(message: "*\(String(describing: roomId))$$$\(String(describing: self.appliancesList[self.index!].applianceType!))0\(self.appliancesList[self.index!].applianceVariableCount)\(self.appliancesList[self.index!].applianceDisplayName!)#")
+                createSpinnerView()
 //                let applianceObj = self.appliancesList[self.index!]
 //                applianceObj.applianceStatus = 1
 //                coredataUtility.saveContext()
@@ -220,6 +280,7 @@ class RoomAppliancesViewController: UIViewController , SocketStreamDelegate{
             if let roomId = self.roomSelected?.roomID{
                
                 Socket.soketmanager.send(message: "*\(String(describing: roomId))$$$\(String(describing: self.appliancesList[self.index!].applianceType!))00\(self.appliancesList[self.index!].applianceDisplayName!)#")
+                createSpinnerView()
 //                let applianceObj = self.appliancesList[self.index!]
 //                applianceObj.applianceStatus = 0
 //                coredataUtility.saveContext()
@@ -263,21 +324,7 @@ extension RoomAppliancesViewController : UICollectionViewDelegate, UICollectionV
         return cell
     }
     /*
-     let alert = UIAlertController(title: "Information", message: "Do you want to delete room?", preferredStyle: .alert)
-     let ok = UIAlertAction(title: "Yes", style: .default) { (alert) in
      
-     let selectedRoomDelete : Appliances = self.appliancesList[indexPath.row]
-     self.coredataUtility.deleteContext(object: selectedRoomDelete)
-     self.coredataUtility.saveContext()
-     self.getAppliances()
-     
-     
-     
-     }
-     alert.addAction(ok)
-     let cancel = UIAlertAction(title: "No", style: .cancel, handler: nil)
-     alert.addAction(cancel)
-     self.present(alert, animated: true, completion: nil)
  */
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -302,6 +349,7 @@ extension RoomAppliancesViewController : UICollectionViewDelegate, UICollectionV
                 let status = ( self.appliancesList[indexPath.row].applianceStatus == 0 ) ? "ON" : "OF"
                 
                 Socket.soketmanager.send(message: "*\(String(describing: roomId))$$$\(String(describing: self.appliancesList[indexPath.row].applianceType!))\(status)\(String(describing: self.appliancesList[indexPath.row].applianceDisplayName!))#")
+                createSpinnerView()
 //                let applianceObj = self.appliancesList[indexPath.row]
 //                applianceObj.applianceStatus = (status == "ON") ? 1 : 0
 //                coredataUtility.saveContext()
@@ -487,9 +535,11 @@ extension RoomAppliancesViewController: CircularSliderDelegate {
                 if !isFromMoodRoutineSettings {
                     if self.appliancesList[self.index!].applianceStatus == 1 {
             Socket.soketmanager.send(message: "*\(String(describing: roomId))$$$\(String(describing: self.appliancesList[self.index!].applianceType!))\(newvalue)\(String(describing: self.appliancesList[self.index!].applianceDisplayName!))#")
+                        createSpinnerView()
                     }
                     else{
                          Socket.soketmanager.send(message: "*\(String(describing: roomId))$$$\(String(describing: self.appliancesList[self.index!].applianceType!))00\(self.appliancesList[self.index!].applianceDisplayName!)#")
+                        createSpinnerView()
                     }
                
                    // applianceObj.applianceStatus = 1

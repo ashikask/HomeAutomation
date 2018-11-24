@@ -189,6 +189,11 @@ public class Socket: NSObject, StreamDelegate {
                                     theMethod
                                     
                                 }
+                                else{
+                                    DispatchQueue.main.async {
+                                        CoreDataUtility().receivedMessage(message: output as String)
+                                    }
+                                }
                             
                         }
                         else{

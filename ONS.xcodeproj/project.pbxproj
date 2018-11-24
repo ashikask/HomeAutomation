@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B06D1892112151200C9B7A4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06D1882112151200C9B7A4 /* SignUpViewController.swift */; };
+		0B17CC4F219C55C200C46497 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B17CC4E219C55C200C46497 /* SpinnerViewController.swift */; };
 		0B1AC4C62163C17600E5406C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1AC4C52163C17600E5406C /* SettingsViewController.swift */; };
 		0B1C61D120F9D1E800A0FD7E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C61D020F9D1E800A0FD7E /* UIColor.swift */; };
 		0B1ED8102100F17E0047D3D6 /* MoodsLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1ED80F2100F17E0047D3D6 /* MoodsLightViewController.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		0B06D1882112151200C9B7A4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0B17CC4E219C55C200C46497 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		0B1AC4C52163C17600E5406C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0B1AC4CA216491C100E5406C /* ONS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ONS.entitlements; sourceTree = "<group>"; };
 		0B1C61D020F9D1E800A0FD7E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				F2E0487B2099EF4F00963501 /* LoginViewController */,
 				F2E0487D2099EF4F00963501 /* SignUPController */,
 				F2E048772099EE4700963501 /* ViewController.swift */,
+				0B17CC4E219C55C200C46497 /* SpinnerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				F2E0488E2099FCFE00963501 /* RoomsViewController.swift in Sources */,
 				F2E048B6209B0CA300963501 /* MoodSettingsViewController.swift in Sources */,
 				F2E048A92099FFBC00963501 /* RoutineTableViewCell.swift in Sources */,
+				0B17CC4F219C55C200C46497 /* SpinnerViewController.swift in Sources */,
 				FA1553F22101902C00DCE073 /* BTService.swift in Sources */,
 				FADF823A20EFD1E50001224F /* sharedManager.swift in Sources */,
 				F2E048B8209B116500963501 /* MoodSettingsTableViewCell.swift in Sources */,
