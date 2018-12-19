@@ -137,6 +137,7 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
                 }
                 if appliancesFixed.count > 0 || appliancesVariable.count > 0 {
                      previousClickSame = false
+                    if self.moodsList.count > 1 {
                     if let moodObject = sharedManager.shared.previousMood {
                         if moodObject.isEqual(self.moodsList[sender.tag]){
                             previousClickSame = true
@@ -147,10 +148,15 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
                             
                         }
                     }
+                    }
                     
+                    
+                    
+                    
+                    if self.moodsList.count > 1 {
                     
                     if sender.isOn == false &&  previousClickSame{
-                        messageStream += (j>0) ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF" : "\(item.roomID!)M$$FOF"
+                        messageStream += (j>0) ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF"
                         if appliancesFixed.count > 0   {
                             let variables = appliancesFixed.joined(separator: "")
                             messageStream += variables
@@ -179,6 +185,39 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
                         if appliancesVariable.count > 0 {
                             for (i,items) in appliancesVariable.enumerated(){
                                 messageStream += ",V0\(appliancesValueVariable[i])\(items)"
+                            }
+                        }
+                    }
+                    }
+                    
+                    else{
+                        if sender.isOn == false {
+                            messageStream += (j>0) ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF"
+                            if appliancesFixed.count > 0   {
+                                let variables = appliancesFixed.joined(separator: "")
+                                messageStream += variables
+                            }
+                            if appliancesVariable.count > 0 {
+                                for items in appliancesVariable{
+                                    messageStream += ",V00\(items)"
+                                }
+                            }
+                            shouldRequest = true
+                            
+                        }
+                        else{
+                            
+                                shouldRequest = true
+                            
+                            messageStream += (j>0) ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FON" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FON"
+                            if appliancesFixed.count > 0   {
+                                let variables = appliancesFixed.joined(separator: "")
+                                messageStream += variables
+                            }
+                            if appliancesVariable.count > 0 {
+                                for (i,items) in appliancesVariable.enumerated(){
+                                    messageStream += ",V0\(appliancesValueVariable[i])\(items)"
+                                }
                             }
                         }
                     }

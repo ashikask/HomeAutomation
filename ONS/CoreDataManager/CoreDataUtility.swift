@@ -106,7 +106,7 @@ class  CoreDataUtility {
     func updateRoom(predicate: NSPredicate, message : String){
          if  let roomLists =   self.arrayOf(Room.self, predicate: predicate, sortDescriptor: nil)  {
            
-            let appliances = String(message.suffix(9))
+            let appliances = String(message.suffix(9).dropFirst())
             for (i,character) in appliances.enumerated() {
                 if  let applianceList =  (roomLists[0] as! Room).hasAppliance?.allObjects {
                     
@@ -134,7 +134,7 @@ class  CoreDataUtility {
     func getRoom(predicate: NSPredicate, message : String){
         if  let roomLists =   self.arrayOf(Room.self, predicate: predicate, sortDescriptor: nil)  {
             //  print(roomLists ?? 0)
-             let index = message.index(message.startIndex, offsetBy: 18)
+             let index = message.index(message.startIndex, offsetBy: 17)
             let moodOrRoutine = String(message[index])
             
             if moodOrRoutine == "M"{

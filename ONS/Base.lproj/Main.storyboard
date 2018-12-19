@@ -945,7 +945,7 @@
                                         </connections>
                                     </switch>
                                     <view hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5V-Fj-1yQ" customClass="RotatingColorWheel" customModule="ONS" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="118" width="359" height="400"/>
+                                        <rect key="frame" x="8" y="106" width="359" height="400"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="359" id="tBr-jg-hKR"/>
@@ -1431,7 +1431,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOY-qC-aTq" customClass="DLRadioButton">
-                                        <rect key="frame" x="37" y="66" width="117.5" height="32"/>
+                                        <rect key="frame" x="37" y="66" width="117.5" height="20"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                         <state key="normal" title="Auto">
                                             <color key="titleColor" red="0.94117647059999998" green="0.47314836090000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1450,7 +1450,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juY-ss-WoN" customClass="DLRadioButton">
-                                        <rect key="frame" x="217.5" y="66" width="117.5" height="32"/>
+                                        <rect key="frame" x="217.5" y="66" width="117.5" height="20"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                         <state key="normal" title="Manual">
                                             <color key="titleColor" red="0.94117647059999998" green="0.47314836090000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1875,7 +1875,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cba-pg-AP0">
-                                        <rect key="frame" x="159" y="101" width="40" height="40"/>
+                                        <rect key="frame" x="159" y="100" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
@@ -2570,17 +2570,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39S-Sl-n9I">
                                         <rect key="frame" x="8" y="8" width="307" height="298"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Check the connectivity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKc-vC-koX">
-                                                <rect key="frame" x="14" y="136" width="279.5" height="26.5"/>
-                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Check the connectivity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKc-vC-koX">
+                                                <rect key="frame" x="14" y="137" width="279.5" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="sKc-vC-koX" firstAttribute="centerX" secondItem="39S-Sl-n9I" secondAttribute="centerX" id="d6L-eA-ZUH"/>
+                                            <constraint firstItem="sKc-vC-koX" firstAttribute="leading" secondItem="39S-Sl-n9I" secondAttribute="leading" constant="14" id="hGn-mK-L4G"/>
                                             <constraint firstItem="sKc-vC-koX" firstAttribute="centerY" secondItem="39S-Sl-n9I" secondAttribute="centerY" id="qQi-tx-pb9"/>
+                                            <constraint firstAttribute="trailing" secondItem="sKc-vC-koX" secondAttribute="trailing" constant="13.5" id="utm-x7-38Z"/>
                                         </constraints>
                                     </view>
                                 </subviews>

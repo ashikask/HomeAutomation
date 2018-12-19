@@ -161,16 +161,27 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
                 self.filteredAppliancesList.removeAll()
                 self.appliancesList = applianceList as! [Appliances]
                 for item in self.appliancesList{
-                        if isFromRoutine{
-                    if item.applianceRoutineStatus == 1 {
-                        self.filteredAppliancesList.append(item)
-                    }
-                    }
-                        else{
-                        if item.applianceMoodStatus == 1 {
-                            self.filteredAppliancesList.append(item)
+                    if let moodAppliance = self.mood?.hasAppliances?.allObjects as? [Appliances]{
+                        let filteredList : [Appliances] = moodAppliance.filter { (object) -> Bool in
+                            //return (object.applianceMoodStatus == 1)
+                            return (object == item)
+                        }
+                        if filteredList.count > 0 {
+                            if isFromRoutine{
+                                if filteredList[0].applianceRoutineStatus == 1 {
+                                    self.filteredAppliancesList.append(filteredList[0])
+                                }
+                            }
+                            else {
+                                if filteredList[0].applianceMoodStatus == 1 {
+                                self.filteredAppliancesList.append(filteredList[0])
+                                }
+                            }
                         }
                     }
+                    
+                   
+                    
                 }
                 
             }
@@ -257,7 +268,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
         }
         else{
             if self.filteredAppliancesList.contains(self.appliancesList[sender.tag]){
-                let inexV = self.filteredAppliancesList.index(of: self.appliancesList[sender.tag])
+                //let inexV = self.filteredAppliancesList.index(of: self.appliancesList[sender.tag])
                 let applianceObj = self.appliancesList[sender.tag]
                 
                 if isFromRoutine{
@@ -286,7 +297,8 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
 //                    }
                 }
               //  coredataUtility.saveContext()
-                self.filteredAppliancesList.remove(at: inexV!)
+                self.filteredAppliancesList.append(self.appliancesList[sender.tag])
+             //   self.filteredAppliancesList.remove(at: inexV!)
                 
             }
         }

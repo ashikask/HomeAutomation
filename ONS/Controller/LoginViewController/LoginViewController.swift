@@ -67,14 +67,18 @@ class LoginViewController: UIViewController , SocketStreamDelegate{
                 else{
                     Socket.soketmanager.open(host: UserDefaults.standard.value(forKey: "ipAddress") as? String, port: 1336)
                 }
+                Socket.soketmanager.send(message: "@")
+                Socket.soketmanager.send(message: "@")
                 let modalViewController : AppliancesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppliancesViewController") as! AppliancesViewController
                 let navController = UINavigationController(rootViewController: modalViewController) // Creating a navigation controller with VC1 at the root of the navigation stack.
                 self.present(navController, animated:true, completion: nil)
+                
             }
             else {
                 if wifissid == "qiming_wifi"{
                     sharedManager.shared.setlocalIpAddress(newIp: HomeAppliancesConstant.localipAddress)
                     Socket.soketmanager.open(host: sharedManager.shared.getlocalIpAddress(), port: 1336)
+                    UserDefaults.standard.set(true, forKey: "launchedBefore")
                 }
                 else{
                     let alert = UIAlertController(title: "Information", message: "Connect to local router", preferredStyle: .alert)
@@ -85,7 +89,7 @@ class LoginViewController: UIViewController , SocketStreamDelegate{
                     
                    
                 }
-                UserDefaults.standard.set(true, forKey: "launchedBefore")
+                
             }
             
             break
@@ -146,7 +150,8 @@ class LoginViewController: UIViewController , SocketStreamDelegate{
                     UserDefaults.standard.set(passwordField.text!, forKey: "newPassword")
                     
                     Socket.soketmanager.send(message: "*SSID:\(String(describing: ssidField.text!.count)):\(ssidField.text!):PASSWORD:\(String(describing: passwordField.text!.count)):\(passwordField.text!)#")
-                    
+                    Socket.soketmanager.send(message: "@")
+                    Socket.soketmanager.send(message: "@")
                     let modalViewController : AppliancesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppliancesViewController") as! AppliancesViewController
                     let navController = UINavigationController(rootViewController: modalViewController) // Creating a navigation controller with VC1 at the root of the navigation stack.
                     self.present(navController, animated:true, completion: nil)

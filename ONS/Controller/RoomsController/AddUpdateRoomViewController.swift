@@ -108,7 +108,7 @@ class AddUpdateRoomViewController: UIViewController , UIPopoverPresentationContr
     }
     @IBAction func UpdateButtonAction(_ sender: UIButton) {
          if ((newRoomIdLabel.text?.count)! > 0 ){
-            self.delegate?.updateData(oldRoomId: (selectedRoom?.r_id)!, newRoomId: newRoomIdLabel.text!)
+            self.delegate?.updateData(oldRoomId: (selectedRoom?.roomID)!, newRoomId: newRoomIdLabel.text!)
             self.delegate?.dissmissView()
         }
          else{

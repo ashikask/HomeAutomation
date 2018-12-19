@@ -130,7 +130,7 @@ extension RoomsViewController : AppliancePopOverProtocol{
 extension RoomsViewController : AddUpdateRoomProtocol,RoomAppliancesProtocol{
    
     func updateData(oldRoomId: String, newRoomId: String) {
-        let predicate = NSPredicate(format: "roomId = %@", oldRoomId)
+        let predicate = NSPredicate(format: "roomID = %@", oldRoomId)
         let rooms =  coredataUtility.arrayOf(Room.self, predicate: predicate, sortDescriptor: nil) as! [Room]
         if rooms.count > 0{
             let room : Room = rooms[0]
