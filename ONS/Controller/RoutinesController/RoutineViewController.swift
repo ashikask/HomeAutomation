@@ -37,12 +37,14 @@ class RoutineViewController: UIViewController ,UIPopoverPresentationControllerDe
             self.routineTablevIew.reloadData()
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     @IBAction func settingsAction(_ sender: UIButton) {
         let modalViewController : MoodSettingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MoodSettingsViewController") as! MoodSettingsViewController
+        
         modalViewController.modalPresentationStyle = .overCurrentContext
         modalViewController.isFromRoutine = true
         modalViewController.rotine = self.routineList[sender.tag]
@@ -135,20 +137,20 @@ class RoutineViewController: UIViewController ,UIPopoverPresentationControllerDe
                         
                         if sender.isOn == false {
                             if sender.tag < 8 {
-                            messageStream += (j>0) ? "@\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))OF" : "\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))OF"
+                            messageStream += (j>0 && messageStream != "*") ? "@\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))OF" : "\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))OF"
                             }
                             else{
-                                messageStream += (j>0) ? "@\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))OF" : "\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))OF"
+                                messageStream += (j>0 && messageStream != "*") ? "@\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))OF" : "\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))OF"
                             }
                             
                         }
                         else{
                             
                             if sender.tag < 8 {
-                            messageStream += (j>0) ? "@\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))F" : "\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))F"
+                            messageStream += (j>0 && messageStream != "*") ? "@\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))F" : "\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))F"
                             }
                             else{
-                               messageStream += (j>0) ? "@\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))F" : "\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))F"
+                               messageStream += (j>0 && messageStream != "*") ? "@\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))F" : "\(item.roomID!)R\(HomeAppliancesConstant().routineType(forRoutine: routineArray[sender.tag]))F"
                             }
                             if appliancesFixed.count > 0   {
                                 let variables = appliancesFixed.joined(separator: "")
@@ -163,9 +165,9 @@ class RoutineViewController: UIViewController ,UIPopoverPresentationControllerDe
                              messageStream += "T"
                             
                             let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "HH:MM:SS"
+                            dateFormatter.dateFormat = "HH:mm:ss"
                             let strDate = dateFormatter.string(from: self.routineList[sender.tag].startTime!).split(separator: ":")
-                            let endDate = dateFormatter.string(from: self.routineList[sender.tag].startTime!).split(separator: ":")
+                            let endDate = dateFormatter.string(from: self.routineList[sender.tag].endDate!).split(separator: ":")
                             
                             for item in strDate{
                                 messageStream += item

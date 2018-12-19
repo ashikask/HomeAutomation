@@ -58,7 +58,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
         EndTimeTextField.inputAccessoryView = toolBar
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,7 +89,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
             
             if (startTimeTextField.text?.count)! > 0 && (EndTimeTextField.text?.count)! > 0 {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm:ss" //Your date format
+            dateFormatter.dateFormat = "HH:mm:ss" //Your date format
             
             self.rotine?.startTime = dateFormatter.date(from: startTimeTextField.text!)
             self.rotine?.endDate = dateFormatter.date(from: EndTimeTextField.text!)
@@ -161,23 +161,32 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
                 self.filteredAppliancesList.removeAll()
                 self.appliancesList = applianceList as! [Appliances]
                 for item in self.appliancesList{
-                    if let moodAppliance = self.mood?.hasAppliances?.allObjects as? [Appliances]{
-                        let filteredList : [Appliances] = moodAppliance.filter { (object) -> Bool in
-                            //return (object.applianceMoodStatus == 1)
-                            return (object == item)
-                        }
-                        if filteredList.count > 0 {
-                            if isFromRoutine{
-                                if filteredList[0].applianceRoutineStatus == 1 {
-                                    self.filteredAppliancesList.append(filteredList[0])
-                                }
+                    if  isFromRoutine{
+                        if let moodAppliance = self.rotine?.hasAppliances?.allObjects as? [Appliances]{
+                            let filteredList : [Appliances] = moodAppliance.filter { (object) -> Bool in
+                                //return (object.applianceMoodStatus == 1)
+                                return (object == item)
                             }
-                            else {
-                                if filteredList[0].applianceMoodStatus == 1 {
-                                self.filteredAppliancesList.append(filteredList[0])
-                                }
+                            if filteredList.count > 0 {
+                                    if filteredList[0].applianceRoutineStatus == 1 {
+                                        self.filteredAppliancesList.append(filteredList[0])
+                                    }
                             }
                         }
+                    }
+                    else{
+                        if let moodAppliance = self.mood?.hasAppliances?.allObjects as? [Appliances]{
+                            let filteredList : [Appliances] = moodAppliance.filter { (object) -> Bool in
+                                //return (object.applianceMoodStatus == 1)
+                                return (object == item)
+                            }
+                            if filteredList.count > 0 {
+                                    if filteredList[0].applianceMoodStatus == 1 {
+                                        self.filteredAppliancesList.append(filteredList[0])
+                                    }
+                            }
+                        }
+                        
                     }
                     
                    
@@ -195,7 +204,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
         if isStartTimeSet == false  {
         print(datePicker.date)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm:ss"
+            dateFormatter.dateFormat = "HH:mm:ss"
             let strDate = dateFormatter.string(from: datePicker.date)
             startTimeTextField.text = strDate
         }
@@ -206,7 +215,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
         else {
         if isEndTimeSet == false{
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm:ss"
+            dateFormatter.dateFormat = "HH:mm:ss"
             let endDate = dateFormatter.string(from: datePicker.date)
             
             EndTimeTextField.text = endDate
@@ -308,7 +317,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
     @objc func datePickerChanged(datePicker:UIDatePicker) {
        isStartTimeSet = true
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm:ss"
+        dateFormatter.dateFormat = "HH:mm:ss"
         let strDate = dateFormatter.string(from: datePicker.date)
         
         startTimeTextField.text = strDate
@@ -316,7 +325,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
     @objc func datePickerChangedEnd(datePicker:UIDatePicker) {
         isEndTimeSet = true
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm:ss"
+        dateFormatter.dateFormat = "HH:mm:ss"
         let endDate = dateFormatter.string(from: datePicker.date)
         
         EndTimeTextField.text = endDate
@@ -421,14 +430,14 @@ extension MoodSettingsViewController : UITableViewDelegate, UITableViewDataSourc
             cell.moodApplianceSwitch.isOn =  status
             if let satrttime = rotine?.startTime{
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "hh:mm:ss"
+                dateFormatter.dateFormat = "HH:mm:ss"
                 let strDate = dateFormatter.string(from: satrttime)
                 
                 startTimeTextField.text = strDate
             }
             if let endtime = rotine?.endDate{
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "hh:mm:ss"
+                dateFormatter.dateFormat = "HH:mm:ss"
                 let strDate = dateFormatter.string(from: endtime)
                 
                 EndTimeTextField.text = strDate

@@ -89,7 +89,7 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
     }
      @IBAction func switchValueChanged(_ sender: UISwitch) {
       
-      
+        if moodArray[sender.tag] != "Leaving Home" {
         if  let roomLists =  coreDataUtility.arrayOf(Room.self){
             print(roomLists)
             let roomList : [Room] = roomLists as! [Room]
@@ -156,18 +156,39 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
                     if self.moodsList.count > 1 {
                     
                     if sender.isOn == false &&  previousClickSame{
-                        messageStream += (j>0) ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF"
+                       
                         if appliancesFixed.count > 0   {
+                             messageStream += (j>0 && messageStream != "*") ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FOF"
                             let variables = appliancesFixed.joined(separator: "")
                             messageStream += variables
-                        }
-                        if appliancesVariable.count > 0 {
-                            for items in appliancesVariable{
-                                messageStream += ",V00\(items)"
+                            if appliancesVariable.count > 0 {
+                                for items in appliancesVariable{
+                                    messageStream += ",V00\(items)"
+                                }
                             }
                         }
-                    
-                
+                        
+                        else if appliancesVariable.count > 0 {
+                            messageStream += (j>0 && messageStream != "*") ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))"
+                            for (i,items) in appliancesVariable.enumerated(){
+                                if i != appliancesVariable.count - 1 {
+                                    messageStream += "V00\(items)"
+                                }
+                                else{
+                                    if appliancesVariable.count == 1{
+                                        messageStream += "V00\(items)"
+                                    }
+                                    else{
+                                        messageStream += ",V00\(items)"
+                                    }
+                                    
+                                }
+                            }
+                            
+                            
+                        }
+                        
+                      
                 }
                     else{
                         if sender.isOn == false {
@@ -177,15 +198,36 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
                         else{
                         shouldRequest = true
                         }
-                        messageStream += (j>0) ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FON" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FON"
+                        
                         if appliancesFixed.count > 0   {
+                            messageStream += (j>0 && messageStream != "*") ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FON" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))FON"
                             let variables = appliancesFixed.joined(separator: "")
                             messageStream += variables
-                        }
-                        if appliancesVariable.count > 0 {
-                            for (i,items) in appliancesVariable.enumerated(){
-                                messageStream += ",V0\(appliancesValueVariable[i])\(items)"
+                            if appliancesVariable.count > 0 {
+                                for (i,items) in appliancesVariable.enumerated(){
+                                    messageStream += ",V0\(appliancesValueVariable[i])\(items)"
+                                }
                             }
+                            
+                        }
+                        else if appliancesVariable.count > 0 {
+                            messageStream += (j>0 && messageStream != "*") ? "@\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))" : "\(item.roomID!)M\(HomeAppliancesConstant().moodType(forMood: (moodArray[sender.tag] as? String)!))"
+                            for (i,items) in appliancesVariable.enumerated(){
+                                if i != appliancesVariable.count - 1 {
+                                messageStream += "V0\(appliancesValueVariable[i])\(items)"
+                                }
+                                else{
+                                    if appliancesVariable.count == 1{
+                                        messageStream += "V0\(appliancesValueVariable[i])\(items)"
+                                    }
+                                    else{
+                                        messageStream += ",V0\(appliancesValueVariable[i])\(items)"
+                                    }
+                                    
+                                }
+                            }
+                            
+                            
                         }
                     }
                     }
@@ -237,10 +279,14 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
                
             }
              messageStream += "#"
-            if shouldRequest {
-            Socket.soketmanager.send(message: messageStream)
-            let mood = self.moodsList[sender.tag]
-            mood.isAdded = (sender.isOn == true) ? 1 : 0
+                if shouldRequest {
+                    Socket.soketmanager.send(message: messageStream)
+                    let mood = self.moodsList[sender.tag]
+                    mood.isAdded = (sender.isOn == true) ? 1 : 0
+                }
+            }
+            else{
+            Socket.soketmanager.send(message: "*0000000000000000M02#")
             }
             coreDataUtility.saveContext()
             print(messageStream)

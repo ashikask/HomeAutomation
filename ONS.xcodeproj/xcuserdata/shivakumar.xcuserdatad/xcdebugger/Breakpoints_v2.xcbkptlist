@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/AddUpdateRoomViewController.swift"
-            timestampString = "565353498.824772"
+            timestampString = "566933516.794488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/RoomsViewController.swift"
-            timestampString = "565353498.824899"
+            timestampString = "566933516.794608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/RoomsViewController.swift"
-            timestampString = "565353498.824972"
+            timestampString = "566933516.79471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/AddUpdateRoomViewController.swift"
-            timestampString = "565353498.825035"
+            timestampString = "566933516.7948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/AddUpdateRoomViewController.swift"
-            timestampString = "565353498.825096"
+            timestampString = "566933516.7948821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/AddUpdateRoomViewController.swift"
-            timestampString = "565353498.8251539"
+            timestampString = "566933516.794958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "189"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/AddUpdateRoomViewController.swift"
-            timestampString = "565353498.825211"
+            timestampString = "566933516.795032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/AddUpdateRoomViewController.swift"
-            timestampString = "565353498.8254319"
+            timestampString = "566933516.795331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/RoomsViewController.swift"
-            timestampString = "565353498.8254991"
+            timestampString = "566933516.795411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/RoomsViewController.swift"
-            timestampString = "565353498.825561"
+            timestampString = "566933516.795491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -438,11 +438,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.825718"
+            timestampString = "566933516.795717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
@@ -451,34 +451,34 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ONS.MoodsViewController.switchValueChanged(__C.UISwitch) -&gt; ()"
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Controller/MoodsController/MoodsViewController.swift"
-                  timestampString = "565350917.850933"
+                  timestampString = "566933225.223938"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "119"
                   endingLineNumber = "119"
-                  offsetFromSymbolStart = "2600">
+                  offsetFromSymbolStart = "3644">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #2 (ONS.Appliances) -&gt; Swift.Bool in ONS.MoodsViewController.switchValueChanged(__C.UISwitch) -&gt; ()"
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Controller/MoodsController/MoodsViewController.swift"
-                  timestampString = "565350917.853876"
+                  timestampString = "566933225.226079"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
                   endingLineNumber = "120"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.825788"
+            timestampString = "566933516.796756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -548,11 +548,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "556195485.6021709"
+            timestampString = "566933516.7982351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -564,11 +564,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "556195485.602358"
+            timestampString = "566933516.79837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "addNewMood(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -580,11 +580,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "556195485.602538"
+            timestampString = "566933516.798474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -596,11 +596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "556195485.602722"
+            timestampString = "566933516.798559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -612,11 +612,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "556195485.602901"
+            timestampString = "566933516.798643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -868,11 +868,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.826248"
+            timestampString = "566933516.799123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "registerButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -884,11 +884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.826329"
+            timestampString = "566933516.799255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "registerButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -900,11 +900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.826399"
+            timestampString = "566933516.799341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "registerButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -916,11 +916,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.826467"
+            timestampString = "566933516.799422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "registerButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -932,11 +932,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.826533"
+            timestampString = "566933516.799502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "loginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -948,11 +948,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.826599"
+            timestampString = "566933516.799582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "loginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1092,11 +1092,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.826785"
+            timestampString = "566933516.799826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "loginAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -1108,12 +1108,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Controller/LoginViewController/LoginViewController.swift"
-                  timestampString = "565353525.278748"
+                  timestampString = "566933225.2963589"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "222"
-                  endingLineNumber = "222"
-                  offsetFromSymbolStart = "388">
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "381">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1123,12 +1123,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Controller/LoginViewController/LoginViewController.swift"
-                  timestampString = "565353525.280888"
+                  timestampString = "566933225.298519"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "224"
-                  endingLineNumber = "224"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "49">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1140,11 +1140,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.826862"
+            timestampString = "566933516.79993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "loginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1348,11 +1348,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.829452"
+            timestampString = "566933516.800297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "loginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1364,27 +1364,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.829513"
+            timestampString = "566933516.800384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "settingsOkAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.829567"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "loginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1396,11 +1380,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.82962"
+            timestampString = "566933516.800464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "loginAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
+            timestampString = "566933516.800545"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "loginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1540,12 +1540,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Helpers/CustomControls/SocketConnection/SocketFile.swift"
-                  timestampString = "565353525.72009"
+                  timestampString = "566933225.37456"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "171"
                   endingLineNumber = "171"
-                  offsetFromSymbolStart = "452">
+                  offsetFromSymbolStart = "583">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1555,12 +1555,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Helpers/CustomControls/SocketConnection/SocketFile.swift"
-                  timestampString = "565353525.722443"
+                  timestampString = "566933225.376691"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "98">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1716,11 +1716,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.831676"
+            timestampString = "566933516.801011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "settingsOkAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1732,23 +1732,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.831735"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "settingsOkAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.831789"
+            timestampString = "566933516.801098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -1764,11 +1748,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.831841"
+            timestampString = "566933516.8011791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "settingsOkAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
+            timestampString = "566933516.801258"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "settingsOkAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1860,7 +1860,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.832612"
+            timestampString = "566933516.801461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -1876,7 +1876,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.83267"
+            timestampString = "566933516.801541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -1892,7 +1892,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.83272"
+            timestampString = "566933516.801615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -1908,7 +1908,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.832769"
+            timestampString = "566933516.801687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -1924,7 +1924,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.832817"
+            timestampString = "566933516.801759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -1940,7 +1940,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.832864"
+            timestampString = "566933516.801831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
@@ -1956,7 +1956,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.832911"
+            timestampString = "566933516.801903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -1972,7 +1972,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.832957"
+            timestampString = "566933516.8019741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -2084,11 +2084,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.833078"
+            timestampString = "566933516.802186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "settingsOkAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2100,11 +2100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.833132"
+            timestampString = "566933516.802271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "settingsOkAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2132,39 +2132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.833498"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.833554"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.833608"
+            timestampString = "566933516.802381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -2180,11 +2148,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
-            timestampString = "565353498.8336591"
+            timestampString = "566933516.802464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
+            timestampString = "566933516.802544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/LoginViewController/LoginViewController.swift"
+            timestampString = "566933516.802623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2212,7 +2212,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.8340631"
+            timestampString = "566933516.802732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -2228,7 +2228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.834118"
+            timestampString = "566933516.802806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -2244,7 +2244,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.834168"
+            timestampString = "566933516.802878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
@@ -2260,7 +2260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.834217"
+            timestampString = "566933516.80295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -2340,7 +2340,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/RoomsViewController.swift"
-            timestampString = "565353498.8343199"
+            timestampString = "566933516.80312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -2356,7 +2356,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/RoomsViewController.swift"
-            timestampString = "565353498.834371"
+            timestampString = "566933516.803196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -2548,12 +2548,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Controller/AppliancesController/AppliancesViewController.swift"
-                  timestampString = "565353526.864967"
+                  timestampString = "566933225.732095"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
                   endingLineNumber = "71"
-                  offsetFromSymbolStart = "2636">
+                  offsetFromSymbolStart = "3430">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2563,12 +2563,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Controller/AppliancesController/AppliancesViewController.swift"
-                  timestampString = "565353526.867346"
+                  timestampString = "566933225.73431"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "72"
                   endingLineNumber = "72"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "34">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2628,12 +2628,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Helpers/CustomControls/SocketConnection/SocketFile.swift"
-                  timestampString = "565353526.886027"
+                  timestampString = "566933225.749212"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "193"
                   endingLineNumber = "193"
-                  offsetFromSymbolStart = "3868">
+                  offsetFromSymbolStart = "5207">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2643,12 +2643,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Helpers/CustomControls/SocketConnection/SocketFile.swift"
-                  timestampString = "565353526.889621"
+                  timestampString = "566933225.751452"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
                   endingLineNumber = "194"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "26">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2676,12 +2676,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Helpers/CustomControls/SocketConnection/SocketFile.swift"
-                  timestampString = "565353526.897518"
+                  timestampString = "566933225.757151"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "200"
                   endingLineNumber = "200"
-                  offsetFromSymbolStart = "4156">
+                  offsetFromSymbolStart = "5581">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2691,12 +2691,12 @@
                   moduleName = "ONS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Helpers/CustomControls/SocketConnection/SocketFile.swift"
-                  timestampString = "565353526.89994"
+                  timestampString = "566933225.759474"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "201"
                   endingLineNumber = "201"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "26">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2708,7 +2708,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/CoreDataManager/CoreDataUtility.swift"
-            timestampString = "565353498.8360341"
+            timestampString = "566933516.803521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -2724,11 +2724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "565349661.614868"
+            timestampString = "566933516.8036031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2740,11 +2740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "565349663.006073"
+            timestampString = "566933516.803695"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2756,11 +2756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "565349667.475323"
+            timestampString = "566933516.803775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2772,7 +2772,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "565349670.586221"
+            timestampString = "566933516.803856"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
+            timestampString = "566933516.803936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
@@ -2787,12 +2803,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
-            timestampString = "565349672.0092371"
+            filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
+            timestampString = "566933516.8040169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2804,11 +2820,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.836157"
+            timestampString = "566933516.804689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2820,27 +2836,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.836215"
+            timestampString = "566933516.805312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "switchValueChanged(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.8362679"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2852,7 +2852,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/RoomsController/RoomsViewController.swift"
-            timestampString = "565353498.836319"
+            timestampString = "566933516.805878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -2868,7 +2868,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.836367"
+            timestampString = "566933516.8059551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -2884,7 +2884,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.836416"
+            timestampString = "566933516.806428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -2900,7 +2900,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.836465"
+            timestampString = "566933516.806854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
@@ -2916,7 +2916,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.836512"
+            timestampString = "566933516.807552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
@@ -2932,7 +2932,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.83656"
+            timestampString = "566933516.808071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
@@ -2948,11 +2948,299 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
-            timestampString = "565353498.836606"
+            timestampString = "566933516.808551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
             endingLineNumber = "140"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
+            timestampString = "566933516.808987"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ONS.MoodsViewController.switchValueChanged(__C.UISwitch) -&gt; ()"
+                  moduleName = "ONS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Controller/MoodsController/MoodsViewController.swift"
+                  timestampString = "566933226.200775"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "4369">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (ONS.Appliances) -&gt; Swift.Bool in ONS.MoodsViewController.switchValueChanged(__C.UISwitch) -&gt; ()"
+                  moduleName = "ONS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shivakumar/Documents/GitHub/HomeAutomation/ONS/Controller/MoodsController/MoodsViewController.swift"
+                  timestampString = "566933226.203079"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
+            timestampString = "566933516.809365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
+            timestampString = "566933516.809734"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
+            timestampString = "566933516.810151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodSettingsViewController.swift"
+            timestampString = "566933516.810523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "saveButtonAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodSettingsViewController.swift"
+            timestampString = "566933516.810642"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "saveButtonAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
+            timestampString = "566933516.8107311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
+            timestampString = "566933516.810847"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
+            timestampString = "566933516.81091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodSettingsViewController.swift"
+            timestampString = "566933516.810969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "getAppliances(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodSettingsViewController.swift"
+            timestampString = "566933516.811022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "getAppliances(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodSettingsViewController.swift"
+            timestampString = "566933516.8110729"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "getAppliances(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
+            timestampString = "566933516.811124"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/RoutinesController/RoutineViewController.swift"
+            timestampString = "566933516.8111759"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
+            timestampString = "566933516.811264"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "switchValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONS/Controller/MoodsController/MoodsViewController.swift"
+            timestampString = "566933516.81189"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "switchValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
