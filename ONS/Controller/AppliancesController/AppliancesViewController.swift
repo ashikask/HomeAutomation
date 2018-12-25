@@ -17,16 +17,18 @@ class AppliancesClass{
         self.imageName = image
     }
 }
-class AppliancesViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class AppliancesViewController: UIViewController, UIPopoverPresentationControllerDelegate , SocketStreamDelegate{
+  
     @IBOutlet weak var appliancesTable: UITableView!
     var appliancesList : [Appliances] = [Appliances]()
     let coredataUtility : CoreDataUtility = CoreDataUtility.init()
     var popoverView : AppliancePopOverTableViewController?
     var appliancesClassList : [AppliancesClass] = [AppliancesClass]()
-    
+    let child = SpinnerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Socket.soketmanager.delegate = self
+         createSpinnerView()
        self.appliancesTable.separatorStyle = .none
         let button = UIButton.init(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
@@ -50,16 +52,22 @@ class AppliancesViewController: UIViewController, UIPopoverPresentationControlle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       updateUi()
+       
+        btDiscoverySharedInstance.disconnect()
+    }
+
+    func updateUi(){
         if  let applianceList =  coredataUtility.arrayOf(Appliances.self){
             print(applianceList)
             self.appliancesList = applianceList as! [Appliances]
-        
+            
             for item in self.appliancesList{
-               
+                
                 if !appliancesClassList.contains(where: {
                     $0.applianceName == item.applianceName!
                 }){
-                appliancesClassList.append(AppliancesClass(name: item.applianceName!, image: item.imageId!))
+                    appliancesClassList.append(AppliancesClass(name: item.applianceName!, image: item.imageId!))
                 }
             }
             for item in self.appliancesClassList{
@@ -72,17 +80,15 @@ class AppliancesViewController: UIViewController, UIPopoverPresentationControlle
                         applianceObj.applianceName == item.applianceName
                     }
                 }
-               
+                
             }
         }
         else{
-          self.appliancesClassList.removeAll()
-          self.appliancesList.removeAll()
+            self.appliancesClassList.removeAll()
+            self.appliancesList.removeAll()
         }
         self.appliancesTable.reloadData()
-        btDiscoverySharedInstance.disconnect()
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -108,7 +114,7 @@ class AppliancesViewController: UIViewController, UIPopoverPresentationControlle
         popoverView = storyboard.instantiateViewController(withIdentifier: "AppliancePopOverTableViewController") as? AppliancePopOverTableViewController
         popoverView?.modalPresentationStyle = UIModalPresentationStyle.popover
         popoverView?.delegate = self
-        popoverView?.popOverArray = ["Rooms", "Moods", "Routines", "Mood Lighting", "Communication"]
+        popoverView?.popOverArray = ["Rooms", "Moods", "Routines", "Mood Lighting", "Communication","Clock Settings"]
         let popover: UIPopoverPresentationController = popoverView!.popoverPresentationController!
         popover.delegate = self
         popover.permittedArrowDirections = .up
@@ -152,13 +158,39 @@ extension AppliancesViewController : AppliancePopOverProtocol{
             let viewController : MoodsLightViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MoodsLightViewController") as! MoodsLightViewController
             self.navigationController?.pushViewController(viewController, animated: true)
         case 4:
-            self.showSettings()
-        
+            let viewController : ViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            self.present(viewController, animated: true, completion: nil)
+        case 5:
+            let viewController : SettingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+            self.present(viewController, animated: true, completion: nil)
         default:
             break
         }
     }
+    func createSpinnerView() {
+        
+        
+        // add the spinner view controller
+        addChildViewController(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParentViewController: self)
+        
+       
+    }
+    func socketDidConnect(stream: Stream) {
+        
+    }
     
+    func socketDidReceiveBeginMessage(stream: Stream, message: String) {
+        DispatchQueue.main.async {
+            CoreDataUtility().receivedMessage(message: message as String)
+            self.updateUi()
+            self.child.willMove(toParentViewController: nil)
+            self.child.view.removeFromSuperview()
+            self.child.removeFromParentViewController()
+        }
+    }
 }
 extension AppliancesViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -87,9 +87,27 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
         self.moodsTableView.reloadData()
         
     }
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+        
+        // add the spinner view controller
+        addChildViewController(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParentViewController: self)
+        
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            // then remove the spinner view controller
+            child.willMove(toParentViewController: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParentViewController()
+        }
+    }
      @IBAction func switchValueChanged(_ sender: UISwitch) {
       
-        if moodArray[sender.tag] != "Leaving Home" {
+        createSpinnerView()
+        if moodArray[sender.tag] as! String != "Leaving Home" {
         if  let roomLists =  coreDataUtility.arrayOf(Room.self){
             print(roomLists)
             let roomList : [Room] = roomLists as! [Room]
@@ -284,16 +302,19 @@ class MoodsViewController: UIViewController ,UIPopoverPresentationControllerDele
                     let mood = self.moodsList[sender.tag]
                     mood.isAdded = (sender.isOn == true) ? 1 : 0
                 }
-            }
-            else{
-            Socket.soketmanager.send(message: "*0000000000000000M02#")
-            }
+            
+            
             coreDataUtility.saveContext()
             print(messageStream)
             sharedManager.shared.previousMood = self.moodsList[sender.tag]
         }
         
     
+    }
+        else{
+            Socket.soketmanager.send(message: "*0000000000000000M02#")
+            
+        }
     }
     /*
     // MARK: - Navigation

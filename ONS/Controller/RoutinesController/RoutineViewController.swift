@@ -46,6 +46,14 @@ class RoutineViewController: UIViewController ,UIPopoverPresentationControllerDe
         let modalViewController : MoodSettingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MoodSettingsViewController") as! MoodSettingsViewController
         
         modalViewController.modalPresentationStyle = .overCurrentContext
+        modalViewController.completionHandlers = {
+            if  let routinesLists =  self.coreDataUtility.arrayOf(Routine.self){
+                print(routinesLists)
+                self.routineList.removeAll()
+                self.routineList = routinesLists as! [Routine]
+                self.routineTablevIew.reloadData()
+            }
+            }
         modalViewController.isFromRoutine = true
         modalViewController.rotine = self.routineList[sender.tag]
         present(modalViewController, animated: true, completion: nil)
@@ -80,12 +88,29 @@ class RoutineViewController: UIViewController ,UIPopoverPresentationControllerDe
         routineList =  coreDataUtility.arrayOf(Routine.self) as! [Routine]
         self.routineTablevIew.reloadData()
         coreDataUtility.saveContext()
-        Socket.soketmanager.send(message: "ROUTADD$$$\(HomeAppliancesConstant().routineType(forRoutine: routineArray[index]))")
+       // Socket.soketmanager.send(message: "ROUTADD$$$\(HomeAppliancesConstant().routineType(forRoutine: routineArray[index]))")
         
+    }
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+        
+        // add the spinner view controller
+        addChildViewController(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParentViewController: self)
+        
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+            // then remove the spinner view controller
+            child.willMove(toParentViewController: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParentViewController()
+        }
     }
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         
-        
+        createSpinnerView()
         if  let roomLists =  coreDataUtility.arrayOf(Room.self){
             print(roomLists)
             let roomList : [Room] = roomLists as! [Room]

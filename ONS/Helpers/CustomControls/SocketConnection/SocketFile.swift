@@ -13,6 +13,7 @@ import CoreData
     func socketDidConnect(stream:Stream)
     @objc optional func socketDidDisconnet(stream:Stream, message:String)
     @objc optional func socketDidReceiveMessage(stream:Stream, message:String)
+    @objc optional func socketDidReceiveBeginMessage(stream:Stream, message:String)
     @objc optional func socketDidReceivePopMessage(stream:Stream, message:String)
     @objc optional func socketDidEndConnection()
 }
@@ -187,6 +188,10 @@ public class Socket: NSObject, StreamDelegate {
                         else if let delegate = self.delegate{
                                 if let theMethod = delegate.socketDidReceiveMessage?(stream: stream, message: output as String) {
                                     theMethod
+                                    
+                                }
+                                else if let theMethodBegin = delegate.socketDidReceiveBeginMessage?(stream: stream, message: output as String) {
+                                    theMethodBegin
                                     
                                 }
                                 else{

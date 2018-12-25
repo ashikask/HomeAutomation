@@ -36,6 +36,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
     var activeTextField :UITextField?
     var rotine : Routine?
     var mood : Mood?
+    var completionHandlers: () -> Void = {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
         datePicker.addTarget(self, action: #selector(datePickerChanged(datePicker:)), for: UIControlEvents.valueChanged)
         datePickerEnd.addTarget(self, action: #selector(datePickerChangedEnd(datePicker:)), for: UIControlEvents.valueChanged)
         let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(dismissPicker))
-        
+        self.filteredAppliancesList.removeAll()
         startTimeTextField.inputAccessoryView = toolBar
         EndTimeTextField.inputAccessoryView = toolBar
         // Do any additional setup after loading the view.
@@ -111,7 +112,9 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
                     }
                 }
             coredataUtility.saveContext()
-              self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true) {
+                    self.completionHandlers()
+                }
             }
             else{
                 let refreshAlert = UIAlertController(title: "Alert", message: "Please enter all data", preferredStyle: UIAlertControllerStyle.alert)
@@ -158,7 +161,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
             if let applianceList =  self.roomList[index].hasAppliance?.allObjects {
                 print(applianceList)
                  self.appliancesList.removeAll()
-                self.filteredAppliancesList.removeAll()
+               // self.filteredAppliancesList.removeAll()
                 self.appliancesList = applianceList as! [Appliances]
                 for item in self.appliancesList{
                     if  isFromRoutine{
@@ -311,7 +314,7 @@ class MoodSettingsViewController: UIViewController , UIPopoverPresentationContro
                 
             }
         }
-        // coredataUtility.saveContext()
+         coredataUtility.saveContext()
     }
     
     @objc func datePickerChanged(datePicker:UIDatePicker) {

@@ -88,6 +88,8 @@ class AddUpdateRoomViewController: UIViewController , UIPopoverPresentationContr
     
     @IBAction func addRoomAction(_ sender: UIButton) {
         
+        if enterRoomIdTextField.text?.count == 16 {
+        
         if ((selectRommTextField.text?.count)! > 0 || (enterRoomIdTextField.text?.count)! > 0) {
             
             self.delegate?.addData(roomName: selectRommTextField.text!, roomId: enterRoomIdTextField.text!, roomImage: homeApplianceConstatnt.room(roomName: selectRommTextField.text!))
@@ -96,6 +98,13 @@ class AddUpdateRoomViewController: UIViewController , UIPopoverPresentationContr
         }
         else{
             let refreshAlert = UIAlertController(title: "Alert", message: "Please enter all data", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            present(refreshAlert, animated: true, completion: nil)
+        }
+        }
+        else{
+            let refreshAlert = UIAlertController(title: "Alert", message: "Please enter 16 character data for Room ID", preferredStyle: UIAlertControllerStyle.alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             present(refreshAlert, animated: true, completion: nil)

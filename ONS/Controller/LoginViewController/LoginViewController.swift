@@ -76,16 +76,16 @@ class LoginViewController: UIViewController , SocketStreamDelegate{
             }
             else {
                 if wifissid == "qiming_wifi"{
-                    sharedManager.shared.setlocalIpAddress(newIp: HomeAppliancesConstant.localipAddress)
-                    Socket.soketmanager.open(host: sharedManager.shared.getlocalIpAddress(), port: 1336)
-                    UserDefaults.standard.set(true, forKey: "launchedBefore")
+//                    sharedManager.shared.setlocalIpAddress(newIp: HomeAppliancesConstant.localipAddress)
+//                    Socket.soketmanager.open(host: sharedManager.shared.getlocalIpAddress(), port: 1336)
+                //    UserDefaults.standard.set(true, forKey: "launchedBefore")
                 }
                 else{
-                    let alert = UIAlertController(title: "Information", message: "Connect to local router", preferredStyle: .alert)
-                    let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alert.addAction(cancel)
-                    self.present(alert, animated: true, completion: nil)
-                    wifiView.isHidden = false
+//                    let alert = UIAlertController(title: "Information", message: "Connect to local router", preferredStyle: .alert)
+//                    let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//                    alert.addAction(cancel)
+//                    self.present(alert, animated: true, completion: nil)
+//                    wifiView.isHidden = false
                     
                    
                 }
@@ -130,13 +130,53 @@ class LoginViewController: UIViewController , SocketStreamDelegate{
     }
     */
 
+    @IBAction func skipAction(_ sender: UIButton) {
+        
+        guard let status = Network.reachability?.status else { return }
+        let wifissidString = ConnectedWifi().getWiFiSsid()
+        switch(status){
+        case .wifi:
+            
+            if wifissidString == "qiming_wifi"{
+                 wifiView.isHidden = true
+                //*SSID:5:Sarga:PASSWORD:5:S@6g@#
+               // UserDefaults.standard.set(ipAddressField.text!, forKey: "ipAddress")
+                //  UserDefaults.standard.set(ssidField.text!, forKey: "newssid")
+                //  UserDefaults.standard.set(passwordField.text!, forKey: "newPassword")
+                
+                //    Socket.soketmanager.send(message: "*SSID:\(String(describing: ssidField.text!.count)):\(ssidField.text!):PASSWORD:\(String(describing: passwordField.text!.count)):\(passwordField.text!)#")
+                
+                sharedManager.shared.setlocalIpAddress(newIp: HomeAppliancesConstant.localipAddress)
+                Socket.soketmanager.open(host: sharedManager.shared.getlocalIpAddress(), port: 1336)
+                Socket.soketmanager.send(message: "@")
+                Socket.soketmanager.send(message: "@")
+                let modalViewController : AppliancesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppliancesViewController") as! AppliancesViewController
+                let navController = UINavigationController(rootViewController: modalViewController) // Creating a navigation controller with VC1 at the root of the navigation stack.
+                self.present(navController, animated:true, completion: nil)
+                
+            }
+            else{
+                 wifiView.isHidden = false
+            }
+            break
+        case .wwan:
+            break
+        case .unreachable:
+            break
+        }
+        
+    }
+    
     @IBAction func settingsOkAction(_ sender: Any) {
         
-        if ssidField.text == "" || passwordField.text == "" || ipAddressField.text == ""
+        if  ipAddressField.text == ""
         {
-            
+            let alert = UIAlertController(title: "Information", message: "Please enter the data", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
         }
-        else{
+       else{
              guard let status = Network.reachability?.status else { return }
            let wifissidString = ConnectedWifi().getWiFiSsid()
             switch(status){
@@ -146,15 +186,27 @@ class LoginViewController: UIViewController , SocketStreamDelegate{
                    
                     //*SSID:5:Sarga:PASSWORD:5:S@6g@#
                     UserDefaults.standard.set(ipAddressField.text!, forKey: "ipAddress")
-                    UserDefaults.standard.set(ssidField.text!, forKey: "newssid")
-                    UserDefaults.standard.set(passwordField.text!, forKey: "newPassword")
+                  //  UserDefaults.standard.set(ssidField.text!, forKey: "newssid")
+                  //  UserDefaults.standard.set(passwordField.text!, forKey: "newPassword")
                     
-                    Socket.soketmanager.send(message: "*SSID:\(String(describing: ssidField.text!.count)):\(ssidField.text!):PASSWORD:\(String(describing: passwordField.text!.count)):\(passwordField.text!)#")
+                //    Socket.soketmanager.send(message: "*SSID:\(String(describing: ssidField.text!.count)):\(ssidField.text!):PASSWORD:\(String(describing: passwordField.text!.count)):\(passwordField.text!)#")
+                     Socket.soketmanager.open(host: sharedManager.shared.getlocalIpAddress(), port: 1336)
                     Socket.soketmanager.send(message: "@")
                     Socket.soketmanager.send(message: "@")
                     let modalViewController : AppliancesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppliancesViewController") as! AppliancesViewController
                     let navController = UINavigationController(rootViewController: modalViewController) // Creating a navigation controller with VC1 at the root of the navigation stack.
                     self.present(navController, animated:true, completion: nil)
+                    UserDefaults.standard.set(true, forKey: "launchedBefore")
+                }
+                else{
+                     UserDefaults.standard.set(ipAddressField.text!, forKey: "ipAddress")
+                   Socket.soketmanager.open(host: UserDefaults.standard.value(forKey: "ipAddress") as? String, port: 1336)
+                    Socket.soketmanager.send(message: "@")
+                    Socket.soketmanager.send(message: "@")
+                    let modalViewController : AppliancesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppliancesViewController") as! AppliancesViewController
+                    let navController = UINavigationController(rootViewController: modalViewController) // Creating a navigation controller with VC1 at the root of the navigation stack.
+                    self.present(navController, animated:true, completion: nil)
+                    UserDefaults.standard.set(true, forKey: "launchedBefore")
                 }
                 break
             case .wwan:
